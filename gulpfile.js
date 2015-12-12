@@ -4,24 +4,24 @@ var gulp = require('gulp'),
     rename = require('gulp-rename'),
     replace = require('gulp-replace'),
     concat = require('gulp-concat'),
-	uglify = require('gulp-uglify'),
-	less = require('gulp-less'),
-	minifyCSS = require('gulp-minify-css'),
-	minifyHTML = require('gulp-minify-html'),
-	fileInclude = require('gulp-file-include'),
-	sourcemaps = require('gulp-sourcemaps'),
+    uglify = require('gulp-uglify'),
+    less = require('gulp-less'),
+    minifyCSS = require('gulp-minify-css'),
+    minifyHTML = require('gulp-minify-html'),
+    fileInclude = require('gulp-file-include'),
+    sourcemaps = require('gulp-sourcemaps'),
     csslint = require('gulp-csslint'),
     lessReporter = require('gulp-csslint-less-reporter'),
     jshint = require('gulp-jshint'),
-	del = require('del'),
-	crypto = require('crypto'),
-	outputFolder = 'public',
-	currentTS = '',
-	isProductionBuild = !!argv.prod;
+    del = require('del'),
+    crypto = require('crypto'),
+    outputFolder = 'public',
+    currentTS = '',
+    isProductionBuild = !!argv.prod;
 	
 function hash(str, postfix) {
-	postfix = postfix || '';
-	return crypto.createHash('md5').update(str + postfix).digest('hex');
+    postfix = postfix || '';
+    return crypto.createHash('md5').update(str + postfix).digest('hex');
 }
 
 var paths = {
