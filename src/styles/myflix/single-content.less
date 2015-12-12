@@ -1,0 +1,100 @@
+.single-content {
+    
+    width: 100%;
+    display: none;
+    
+    .movie-title {
+        float: left;
+        background-color: @black;
+        color: @white;
+        text-align: center;
+        margin: 0 0 2px 0;
+        padding: 5px;
+        width: 85%;
+        height: 30px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        vertical-align: middle;
+    }
+    
+    .close {
+        cursor: pointer;
+        margin: 0 0 2px 0;
+        padding: 5px 10px;
+        font-size: 150%;
+        background-color: @white;
+        color: @black;
+        float: right;
+        vertical-align: middle;
+        opacity: 0.5;
+    }
+    
+    .close:hover {
+        opacity: 1;
+    }
+    
+    .movie-poster-container {
+        background-color: @black;
+        vertical-align: top;
+        
+        #embed-movie-container {
+            margin: 0 auto;
+        } 
+    }
+    
+    .movie-info-container {
+        vertical-align: top;
+        width: 100%;
+        margin-top: 10px;
+        
+        .movie-info-inner {
+            color: @white;
+            width: 86.5%;
+            margin: 0 auto;
+            padding: 10px;
+            font-size: 1.4em;
+            line-height: 1.7em;
+            
+            .plot {
+                border-bottom: 1px dotted @white;
+                margin-bottom: 10px;
+                padding-bottom: 10px;
+            }
+            
+            .director {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            
+            .genre {
+                margin-bottom: 5px;
+                padding-bottom: 5px;
+            }
+            
+            .meta-container {
+                
+                border-top: 1px dotted @white;   
+                margin-top: 5px;
+                padding-top: 5px;
+                margin-bottom: 15px;
+                
+                .rating, .duration, .certification {
+                    display: inline-block;
+                    margin-right: 10px;
+                }
+                                
+                
+            }
+            
+            
+            
+        }
+        
+        
+        
+        
+    }
+    
+}
