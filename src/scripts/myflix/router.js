@@ -9,8 +9,7 @@ myFlix.router = {};
 myFlix.router.instance = null;
 
 myFlix.router.setRoutes = function() {
-	
-	myFlix.router.instance = new Router();
+    myFlix.router.instance = new Router();
 	
     myFlix.router.instance.get('#/movies', function(req, next) {
         myFlix.router.instance.redirect('#/movies/What\'s New');
@@ -28,5 +27,4 @@ myFlix.router.setRoutes = function() {
         myFlix.router.instance.redirect('#/movies');
     });
     myFlix.router.instance.run();
-
 };
