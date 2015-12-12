@@ -21,7 +21,7 @@ myFlix.movies.topbar.show = function() {
         txt += 'onclick="' + myFlix.movies.topbar.makeSortAnchor('title', 'asc') + '">Title A-Z</a></li>';	
     }
 	
-	if (myFlix.movies.selectedSortField === 'year') {
+    if (myFlix.movies.selectedSortField === 'year') {
         txt +='<li><a class="selected" href="#" ';
         if (myFlix.movies.selectedSortType === 'asc') {
             txt += 'onclick="' + myFlix.movies.topbar.makeSortAnchor('year', 'desc') + '">Year <i class="fa fa-arrow-down"></i></a></li>'; 
@@ -29,7 +29,7 @@ myFlix.movies.topbar.show = function() {
             txt += 'onclick="' + myFlix.movies.topbar.makeSortAnchor('year', 'asc') + '">Year <i class="fa fa-arrow-up"></i></a></li>';  
         }
     } else {
-    	txt +='<li><a href="#" ';
+        txt +='<li><a href="#" ';
         txt += 'onclick="' + myFlix.movies.topbar.makeSortAnchor('year', 'desc') + '">Year <i class="fa fa-arrow-up"></i></a></li>';      
     }
     
@@ -41,7 +41,7 @@ myFlix.movies.topbar.show = function() {
             txt += 'onclick="' + myFlix.movies.topbar.makeSortAnchor('rating', 'asc') + '">Rating <i class="fa fa-arrow-up"></i></a></li>';  
         }
     } else {
-    	txt +='<li><a href="#" ';
+        txt +='<li><a href="#" ';
         txt += 'onclick="' + myFlix.movies.topbar.makeSortAnchor('rating', 'desc') + '">Rating <i class="fa fa-arrow-up"></i></a></li>';      
     }
 
