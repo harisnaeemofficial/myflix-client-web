@@ -13,7 +13,7 @@ myFlix.movies.topbar.show = function() {
         txt +='<li><a class="selected" href="#" ';
         if (myFlix.movies.selectedSortType === 'asc') {
             txt += 'onclick="' + myFlix.movies.topbar.makeSortAnchor('title', 'desc') + '">Title A-Z</a></li>';	
-		} else {
+        } else {
             txt += 'onclick="' + myFlix.movies.topbar.makeSortAnchor('title', 'asc') + '">Title Z-A</a></li>';	
 		}
 	} else {
