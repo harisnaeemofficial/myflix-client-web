@@ -7,7 +7,7 @@ myFlix.movies.genres = {};
 myFlix.movies.genres.currentList = [];
 
 myFlix.movies.genres.show = function(genres) {
-	var txt = '',
+    var txt = '',
         genreSelected = myFlix.movies.selectedGenre === 'What\'s New' ? ' item-selected' : '';
     txt += '';
     txt += '<li><a class="item' + genreSelected + '" href="#/movies/What\'s New">What\'s New</a></li>';    
