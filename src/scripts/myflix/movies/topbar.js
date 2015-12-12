@@ -9,17 +9,17 @@ myFlix.movies.topbar.show = function() {
 	
     txt += '<li>Sort:</li>';
 	
-	if (myFlix.movies.selectedSortField === 'title') {
+    if (myFlix.movies.selectedSortField === 'title') {
         txt +='<li><a class="selected" href="#" ';
         if (myFlix.movies.selectedSortType === 'asc') {
             txt += 'onclick="' + myFlix.movies.topbar.makeSortAnchor('title', 'desc') + '">Title A-Z</a></li>';	
         } else {
             txt += 'onclick="' + myFlix.movies.topbar.makeSortAnchor('title', 'asc') + '">Title Z-A</a></li>';	
         }
-	} else {
-		txt +='<li><a href="#" ';
+    } else {
+        txt +='<li><a href="#" ';
         txt += 'onclick="' + myFlix.movies.topbar.makeSortAnchor('title', 'asc') + '">Title A-Z</a></li>';	
-	}
+    }
 	
 	if (myFlix.movies.selectedSortField === 'year') {
         txt +='<li><a class="selected" href="#" ';
