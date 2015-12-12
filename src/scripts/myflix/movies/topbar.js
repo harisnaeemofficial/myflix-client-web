@@ -4,10 +4,10 @@
 myFlix.movies.topbar = {};
 
 myFlix.movies.topbar.show = function() {
-	var txt = '',
-	   sortSelected = '';	
+    var txt = '',
+        sortSelected = '';	
 	
-	txt += '<li>Sort:</li>';
+    txt += '<li>Sort:</li>';
 	
 	if (myFlix.movies.selectedSortField === 'title') {
         txt +='<li><a class="selected" href="#" ';
