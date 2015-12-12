@@ -12,11 +12,11 @@ myFlix.movies.item.currentMovieId = 0;
 myFlix.movies.item.coundownTimer = null;
 
 myFlix.movies.item.openSingleContent = function(movieId, autoPlay) {
-	myFlix.movies.item.currentMovieId = movieId;
-	var movie = myFlix.movies.items.currentList.filter(function(a) { return a.id === movieId; })[0],
-	   directorTitle = movie.director.length > 1 ? 'Directors' : 'Director',
-	   txt = '';
-	window.scrollTo(0, 0);
+    myFlix.movies.item.currentMovieId = movieId;
+    var movie = myFlix.movies.items.currentList.filter(function(a) { return a.id === movieId; })[0],
+        directorTitle = movie.director.length > 1 ? 'Directors' : 'Director',
+        txt = '';
+    window.scrollTo(0, 0);
     $('#main-wrapper').hide();
     $('.single-content').show();
     
