@@ -10,7 +10,7 @@ myFlix.sidebarWidth = 170;
 myFlix.windowWidth = 0;
 
 myFlix.init = function() {
-	myFlix.windowWidth = $(window).width();
+    myFlix.windowWidth = $(window).width();
     myFlix.setResponsive();
     window.addEventListener('resize', function() {
         var currentWidth = $(window).width();
@@ -23,7 +23,7 @@ myFlix.init = function() {
 };
 
 myFlix.toggleSidebar = function() {
-	if ($('.left-sidebar').get(0).style.display === 'block') {
+    if ($('.left-sidebar').get(0).style.display === 'block') {
         $('.left-sidebar').get(0).setAttribute('style', 'display:none');
         $('.middle-content').get(0).setAttribute('style', 'padding-left: 0px');
     } else {
