@@ -6,8 +6,8 @@ var gulp = require('gulp'),
     concat = require('gulp-concat'),
     uglify = require('gulp-uglify'),
     less = require('gulp-less'),
-    minifyCSS = require('gulp-minify-css'),
-    minifyHTML = require('gulp-minify-html'),
+    minifyCSS = require('gulp-cssnano'),
+    minifyHTML = require('gulp-htmlmin'),
     fileInclude = require('gulp-file-include'),
     sourcemaps = require('gulp-sourcemaps'),
     csslint = require('gulp-csslint'),
@@ -132,7 +132,8 @@ gulp.task('gen-styles', function() {
     return gulp.src(paths.styles)
         .pipe(concat(hash(currentTS, 'css') + '.css'))
         .pipe(less())
-        .pipe(gulpif(isProductionBuild, minifyCSS({keepSpecialComments:0})))
+        //.pipe(gulpif(isProductionBuild, minifyCSS({keepSpecialComments:0})))
+        .pipe(gulpif(isProductionBuild, minifyCSS({discardComments:{removeAll:true}})))
         .pipe(gulp.dest('./' + outputFolder + '/files/styles'));
 });
 
@@ -155,7 +156,8 @@ gulp.task('copy-fonts', function() {
 gulp.task('gen-index-html', function() {
     return gulp.src(paths.html)
         .pipe(fileInclude())
-        .pipe(gulpif(isProductionBuild, minifyHTML({empty:true, spare:true, quotes:true})))
+        //.pipe(gulpif(isProductionBuild, minifyHTML({empty:true, spare:true, quotes:true})))
+        .pipe(gulpif(isProductionBuild, minifyHTML({removeComments:true, collapseWhitespace: true})))
         .pipe(replace(/<head>/, '<head><link rel="stylesheet" type="text/css" href="./files/styles/' + hash(currentTS, 'css') + '.css" /><script type="text/javascript" src="./files/scripts/jwplayer.js"></script><script type="text/javascript" src="./files/scripts/' + hash(currentTS, 'js') + '.js"></script><link rel="shortcut icon" href="./files/icons/' + hash(currentTS, 'ico') + '.ico" />'))
         .pipe(gulp.dest('./' + outputFolder));
 });
