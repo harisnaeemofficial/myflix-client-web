@@ -23,7 +23,7 @@ myFlix.movies.item.openSingleContent = function(movieId, autoPlay) {
     if (myFlix.movies.item.jwplayerInstance === null) {
     	myFlix.movies.item.jwplayerInstance = jwplayer('embed-movie-container');
     }
-    
+
     try {
         myFlix.movies.item.jwplayerInstance.remove();
     } catch(e) {}
@@ -143,7 +143,7 @@ myFlix.movies.item.closeSingleContent = function() {
 
 myFlix.movies.item.parseMovieInfo = function(movie) {
     var directorTitle = movie.director.length > 1 ? 'Directors' : 'Director';
-    $('.single-content .movie-title').html('<span>' + movie.title.replace(/ _ /ig, ' - ') + '</span>').show().textfill({});
+    $('.single-content .movie-info-container .movie-info-inner .title').html('' + movie.title.replace(/ _ /ig, ' - ') + '').show();
     $('.single-content .movie-info-container .movie-info-inner .plot').html(movie.plot);    
     $('.single-content .movie-info-container .movie-info-inner .director').html('<strong>' + directorTitle + ':</strong> ' + movie.director.join(', '));
 
