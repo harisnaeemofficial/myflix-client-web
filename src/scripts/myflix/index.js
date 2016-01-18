@@ -3,16 +3,16 @@
  * @include "./router.js"
  */
 
-var myFlix={};
+var myFlix = {};
 
 myFlix.windowBreakpoint = 721;
 myFlix.sidebarWidth = 170;
 myFlix.windowWidth = 0;
 
-myFlix.init = function() {
+myFlix.init = function () {
     myFlix.windowWidth = $(window).width();
     myFlix.setResponsive();
-    window.addEventListener('resize', function() {
+    window.addEventListener('resize', function () {
         var currentWidth = $(window).width();
         if (currentWidth !== myFlix.windowWidth) {
             myFlix.windowWidth = currentWidth;
@@ -22,7 +22,7 @@ myFlix.init = function() {
     myFlix.router.setRoutes();
 };
 
-myFlix.toggleSidebar = function() {
+myFlix.toggleSidebar = function () {
     if ($('.left-sidebar').get(0).style.display === 'block') {
         $('.left-sidebar').get(0).setAttribute('style', 'display:none');
         $('.middle-content').get(0).setAttribute('style', 'padding-left: 0px');
@@ -32,7 +32,7 @@ myFlix.toggleSidebar = function() {
     }
 };
 
-myFlix.setResponsive = function(currentWidth) {
+myFlix.setResponsive = function (currentWidth) {
     if (myFlix.windowWidth < myFlix.windowBreakpoint) {
         $('.left-sidebar').get(0).setAttribute('style', 'display:none');
         $('.middle-content').get(0).setAttribute('style', 'padding-left: 0px');

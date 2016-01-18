@@ -1,10 +1,10 @@
 /**
  * @include "./index.js"
  */
- 
+
 myFlix.utils = {};
 
-myFlix.utils.jsInc = function(id, url) {
+myFlix.utils.jsInc = function (id, url) {
     var oldId = document.getElementById(id),
         scriptElement = document.createElement('script');
     if (oldId) {
@@ -16,7 +16,7 @@ myFlix.utils.jsInc = function(id, url) {
     document.getElementsByTagName('head')[0].appendChild(scriptElement);
 };
 
-myFlix.utils.forEach = function(obj, cb) {
+myFlix.utils.forEach = function (obj, cb) {
     var i,
         l,
         k;
@@ -37,22 +37,25 @@ myFlix.utils.forEach = function(obj, cb) {
     }
 };
 
-myFlix.utils.sortArray = function(data, key, type) {
+myFlix.utils.sortArray = function (data, key, type) {
     type = type || 'asc';
-    return data.sort(function(a, b) {
-        var x = a[key]; var y = b[key];
-        if (type === 'asc' ) { return ((x < y) ? -1 : ((x > y) ? 1 : 0)); }
-        if (type === 'desc') { return ((x > y) ? -1 : ((x < y) ? 1 : 0)); }
+    return data.sort(function (a, b) {
+        var x = a[key];
+        var y = b[key];
+        if (type === 'asc') {
+            return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+        }
+        if (type === 'desc') {
+            return ((x > y) ? -1 : ((x < y) ? 1 : 0));
+        }
     });
 };
 
 
-myFlix.utils.nextInArray = function(index, arr) {
+myFlix.utils.nextInArray = function (index, arr) {
     index = index + 1;
-    if(index >= arr.length) {
+    if (index >= arr.length) {
         index = 0;
     }
     return arr[index];
 };
-
-

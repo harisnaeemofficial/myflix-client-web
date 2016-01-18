@@ -1,13 +1,12 @@
 /*csslint box-model:false */
+
 .left-sidebar {
-    
     .search-box {
         display: block;
         padding: 12px 5px;
         padding-left: 5px;
         padding-top: 10px;
         font-weight: bold;
-        
         input[type="search"] {
             border: 0;
             padding: 10px;
@@ -15,14 +14,11 @@
             font-weight: bold;
             width: 90%;
         }
-        
     }
-    
     .items {
         padding: 0;
         margin: 0;
         list-style: none;
-        
         .item {
             display: block;
             padding: 12px 5px;
@@ -32,18 +28,14 @@
             overflow: hidden;
             text-overflow: ellipsis;
             color: #FFFFFF;
-            font-weight: bold;      
+            font-weight: bold;
         }
-        
         .item:hover {
             .gradient(@red1, @red1, @red2);
             color: #FFFFFF;
         }
-        
         .item-selected {
             .gradient(@blue1, @blue1, @blue2);
         }
-                
     }
-    
 }

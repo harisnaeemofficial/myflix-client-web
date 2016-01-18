@@ -1,8 +1,6 @@
 .single-content {
-    
     width: 100%;
     display: none;
-    
     .close {
         cursor: pointer;
         margin: 0;
@@ -14,71 +12,55 @@
         vertical-align: middle;
         opacity: 0.5;
     }
-    
     .close:hover {
         opacity: 1;
     }
-    
     .movie-poster-container {
         background-color: @black;
         vertical-align: top;
-
-        #embed-movie-container {
-
-        } 
+        #embed-movie-container {}
     }
-
     .movie-info-container {
         vertical-align: top;
         width: 100%;
         margin-top: 10px;
-
         .movie-info-inner {
             color: @white;
             width: 86.5%;
             padding: 10px;
             font-size: 1.4em;
             line-height: 1.7em;
-
             .title {
                 border-bottom: 1px dotted @white;
                 margin-bottom: 10px;
                 padding-bottom: 10px;
             }
-
             .plot {
                 border-bottom: 1px dotted @white;
                 margin-bottom: 10px;
                 padding-bottom: 10px;
             }
-
             .director {
                 white-space: nowrap;
                 overflow: hidden;
                 text-overflow: ellipsis;
             }
-
             .genre {
                 margin-bottom: 5px;
                 padding-bottom: 5px;
             }
-            
             .meta-container {
-                
-                border-top: 1px dotted @white;   
+                border-top: 1px dotted @white;
                 margin-top: 5px;
                 padding-top: 5px;
                 margin-bottom: 15px;
-                
-                .rating, .duration, .certification {
+                .rating,
+                .duration,
+                .certification {
                     display: inline-block;
                     margin-right: 10px;
                 }
-                
             }
-            
         }
-        
     }
-    
 }
