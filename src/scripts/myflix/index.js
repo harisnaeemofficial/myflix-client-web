@@ -36,8 +36,10 @@ myFlix.setResponsive = function (currentWidth) {
     if (myFlix.windowWidth < myFlix.windowBreakpoint) {
         $('.left-sidebar').get(0).setAttribute('style', 'display:none');
         $('.middle-content').get(0).setAttribute('style', 'padding-left: 0px');
+        $('.single-content .close').get(0).setAttribute('style', 'font-size: 100%');
     } else {
         $('.left-sidebar').get(0).setAttribute('style', 'display:block');
         $('.middle-content').get(0).setAttribute('style', 'padding-left: ' + myFlix.sidebarWidth + 'px');
+        $('.single-content .close').get(0).removeAttribute('style');
     }
 };

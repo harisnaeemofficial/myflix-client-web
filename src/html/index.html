@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-        <title>MyFlix</title>
-    </head>
-    <body>
-        @@include('./partials/single-content.html')
-        <section id="main-wrapper">
-            @@include('./partials/topbar.html')
-            @@include('./partials/left-sidebar.html')
-            @@include('./partials/middle-content.html')
-        </section>
-        <script type="text/javascript">myFlix.init();</script>
-    </body>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>MyFlix</title>
+</head>
+
+<body>
+    @@include('./partials/single-content.html')
+    <section id="main-wrapper">
+        @@include('./partials/topbar.html') @@include('./partials/left-sidebar.html') @@include('./partials/middle-content.html')
+    </section>
+    <script type="text/javascript">
+        myFlix.init();
+    </script>
+</body>
+
 </html>
