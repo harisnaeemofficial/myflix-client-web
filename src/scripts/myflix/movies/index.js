@@ -18,6 +18,8 @@ myFlix.movies.index = function (req, next) {
     myFlix.movies.setSelectedGenre(req.params.genre);
     myFlix.movies.setBreadcrumb();
     myFlix.movies.setSortItems();
+    $('#input-search').attr('placeholder', 'Search Movies ...').attr('onkeyup', 'myFlix.movies.search.init(this.value);');
+
     if (myFlix.movies.genres.currentList.length !== 0) {
         myFlix.movies.genres.show(myFlix.movies.genres.currentList);
     } else {

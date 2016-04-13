@@ -51,7 +51,6 @@ myFlix.utils.sortArray = function (data, key, type) {
     });
 };
 
-
 myFlix.utils.nextInArray = function (index, arr) {
     index = index + 1;
     if (index >= arr.length) {

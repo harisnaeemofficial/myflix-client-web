@@ -11,6 +11,7 @@ myFlix.movies.genres.show = function (genres) {
         genreSelected = myFlix.movies.selectedGenre === 'What\'s New' ? ' item-selected' : '';
     txt += '';
     txt += '<li><a class="item' + genreSelected + '" href="#/movies/What\'s New">What\'s New</a></li>';
+    txt += '<li><a class="item" href="#/comics">Comics &nbsp;<i class="fa fa-arrow-right" aria-hidden="true"></i></a></li>';
     myFlix.utils.forEach(genres, function (i, genre) {
         genreSelected = myFlix.movies.selectedGenre === genre ? ' item-selected' : '';
         txt += '<li><a class="item' + genreSelected + '" href="#/movies/genre/' + genre + '">' + genre + '</a></li>';

@@ -3,7 +3,7 @@
  * @include "./index.js"
  * @include "./movies/index.js"
  */
-/*global Router */
+/*global Router, alert*/
 myFlix.router = {};
 
 myFlix.router.instance = null;
@@ -22,6 +22,15 @@ myFlix.router.setRoutes = function () {
     myFlix.router.instance.get('#/movies/genre/:genre', function (req, next) {
         myFlix.movies.index(req, next);
     });
+
+    myFlix.router.instance.get('#/comics', function (req, next) {
+        myFlix.router.instance.redirect('#/comics/genre/Batman');
+    });
+
+    myFlix.router.instance.get('#/comics/genre/:genre', function (req, next) {
+        myFlix.comics.index(req, next);
+    });
+
 
     myFlix.router.instance.errors(404, function () {
         myFlix.router.instance.redirect('#/movies');
