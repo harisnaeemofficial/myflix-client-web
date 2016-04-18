@@ -3,17 +3,17 @@
  */
 /*global jwplayer*/
 
-myFlix.comics.item = {};
+myFlix.animations.item = {};
 
-myFlix.comics.item.jwplayerInstance = null;
+myFlix.animations.item.jwplayerInstance = null;
 
-myFlix.comics.item.currentMovieId = 0;
+myFlix.animations.item.currentMovieId = 0;
 
-myFlix.comics.item.coundownTimer = null;
+myFlix.animations.item.coundownTimer = null;
 
-myFlix.comics.item.openSingleContent = function (movieId, autoPlay) {
-    myFlix.comics.item.currentMovieId = movieId;
-    var movie = myFlix.comics.items.currentList.filter(function (a) {
+myFlix.animations.item.openSingleContent = function (movieId, autoPlay) {
+    myFlix.animations.item.currentMovieId = movieId;
+    var movie = myFlix.animations.items.currentList.filter(function (a) {
             return a.id === movieId;
         })[0],
         directorTitle = movie.director.length > 1 ? 'Directors' : 'Director',
@@ -22,12 +22,12 @@ myFlix.comics.item.openSingleContent = function (movieId, autoPlay) {
     $('#main-wrapper').hide();
     $('.single-content').show();
 
-    if (myFlix.comics.item.jwplayerInstance === null) {
-        myFlix.comics.item.jwplayerInstance = jwplayer('embed-movie-container');
+    if (myFlix.animations.item.jwplayerInstance === null) {
+        myFlix.animations.item.jwplayerInstance = jwplayer('embed-movie-container');
     }
 
     try {
-        myFlix.comics.item.jwplayerInstance.remove();
+        myFlix.animations.item.jwplayerInstance.remove();
     } catch (e) {}
 
     var jwplayerOptions = {
@@ -76,18 +76,18 @@ myFlix.comics.item.openSingleContent = function (movieId, autoPlay) {
         jwplayerOptions.autostart = false;
     }
 
-    myFlix.comics.item.jwplayerInstance.setup(jwplayerOptions);
+    myFlix.animations.item.jwplayerInstance.setup(jwplayerOptions);
 
     $('.single-content .movie-info-container').hide();
 
-    myFlix.comics.item.parseMovieInfo(movie);
+    myFlix.animations.item.parseMovieInfo(movie);
 
-    myFlix.comics.item.jwplayerInstance.on('play', function () {
+    myFlix.animations.item.jwplayerInstance.on('play', function () {
         $('.single-content .movie-info-container').show();
     });
 
-    myFlix.comics.item.jwplayerInstance.on('complete', function () {
-        var nextMovie = myFlix.utils.nextInArray($.inArray(movie, myFlix.comics.items.currentList), myFlix.comics.items.currentList),
+    myFlix.animations.item.jwplayerInstance.on('complete', function () {
+        var nextMovie = myFlix.utils.nextInArray($.inArray(movie, myFlix.animations.items.currentList), myFlix.animations.items.currentList),
             txt = '';
 
         txt += '<table cellpadding="0" cellspacing="0">';
@@ -101,7 +101,7 @@ myFlix.comics.item.openSingleContent = function (movieId, autoPlay) {
         txt += '<tr>';
         txt += '<td valign="top"><img style="margin-right:15px;" src="' + nextMovie.folderUri + '/' + nextMovie.cover + '" /></td>';
         txt += '<td valign="top">';
-        txt += '<div id="countdown"></div><div style="text-align:center;margin-top:10px;font-weight:bold;cursor:pointer;" onclick="myFlix.comics.item.closeSingleContent();">Cancel</div>';
+        txt += '<div id="countdown"></div><div style="text-align:center;margin-top:10px;font-weight:bold;cursor:pointer;" onclick="myFlix.animations.item.closeSingleContent();">Cancel</div>';
         txt += '</td>';
         txt += '</tr>';
 
@@ -109,9 +109,9 @@ myFlix.comics.item.openSingleContent = function (movieId, autoPlay) {
 
         $('#embed-movie-container').empty().html(txt);
 
-        myFlix.comics.item.parseMovieInfo(nextMovie);
+        myFlix.animations.item.parseMovieInfo(nextMovie);
 
-        myFlix.comics.item.coundownTimer = $("#countdown").countdown360({
+        myFlix.animations.item.coundownTimer = $("#countdown").countdown360({
             radius: 60,
             seconds: 40,
             label: ['sec', 'secs'],
@@ -120,40 +120,40 @@ myFlix.comics.item.openSingleContent = function (movieId, autoPlay) {
             fillStyle: '#DB0510',
             autostart: false,
             onComplete: function () {
-                myFlix.comics.item.openSingleContent(nextMovie.id, true);
+                myFlix.animations.item.openSingleContent(nextMovie.id, true);
             }
         });
 
-        myFlix.comics.item.coundownTimer.start();
+        myFlix.animations.item.coundownTimer.start();
 
     });
 
 };
 
-myFlix.comics.item.closeSingleContent = function () {
-    if (myFlix.comics.item.coundownTimer !== null) {
-        myFlix.comics.item.coundownTimer.stop();
+myFlix.animations.item.closeSingleContent = function () {
+    if (myFlix.animations.item.coundownTimer !== null) {
+        myFlix.animations.item.coundownTimer.stop();
     }
     try {
-        myFlix.comics.item.jwplayerInstance.remove();
+        myFlix.animations.item.jwplayerInstance.remove();
     } catch (e) {}
     $('.single-content').hide();
     $('#main-wrapper').show();
-    $(window).scrollTop($('#movie-' + myFlix.comics.item.currentMovieId).offset().top);
+    $(window).scrollTop($('#movie-' + myFlix.animations.item.currentMovieId).offset().top);
 };
 
 
-myFlix.comics.item.parseMovieInfo = function (movie) {
+myFlix.animations.item.parseMovieInfo = function (movie) {
     var directorTitle = movie.director.length > 1 ? 'Directors' : 'Director';
     $('.single-content .movie-info-container .movie-info-inner .title').html('' + movie.title.replace(/ _ /ig, ' - ') + '').show();
     $('.single-content .movie-info-container .movie-info-inner .plot').html(movie.plot);
     $('.single-content .movie-info-container .movie-info-inner .director').html('<strong>' + directorTitle + ':</strong> ' + movie.director.join(', '));
 
-    if (movie.genre[0] !== '') {
-        $('.single-content .movie-info-container .movie-info-inner .genre').html('<strong>Genre:</strong> ' + movie.genre.join(', ')).show();
-    } else {
-        $('.single-content .movie-info-container .movie-info-inner .genre').empty().hide();
-    }
+    //if (movie.genre[0] !== '') {
+    //    $('.single-content .movie-info-container .movie-info-inner .genre').html('<strong>Genre:</strong> ' + movie.genre.join(', ')).show();
+    //} else {
+    $('.single-content .movie-info-container .movie-info-inner .genre').empty().hide();
+    //}
 
     $('.single-content .movie-info-container .movie-info-inner .meta-container .rating').html('<strong>IMDB Rating:</strong> ' + movie.rating);
     $('.single-content .movie-info-container .movie-info-inner .meta-container .duration').html('<strong>Duration:</strong> ' + movie.durationminutes + ' min');

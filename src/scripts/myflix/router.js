@@ -23,12 +23,12 @@ myFlix.router.setRoutes = function () {
         myFlix.movies.index(req, next);
     });
 
-    myFlix.router.instance.get('#/comics', function (req, next) {
-        myFlix.router.instance.redirect('#/comics/genre/Batman');
+    myFlix.router.instance.get('#/animations', function (req, next) {
+        myFlix.router.instance.redirect('#/animations/genre/All Various');
     });
 
-    myFlix.router.instance.get('#/comics/genre/:genre', function (req, next) {
-        myFlix.comics.index(req, next);
+    myFlix.router.instance.get('#/animations/genre/:genre', function (req, next) {
+        myFlix.animations.index(req, next);
     });
 
 

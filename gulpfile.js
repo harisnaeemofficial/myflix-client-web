@@ -46,12 +46,12 @@ var paths = {
         './src/scripts/myflix/movies/search.js',
         './src/scripts/myflix/movies/genres.js',
         './src/scripts/myflix/movies/item.js',
-        './src/scripts/myflix/comics/index.js',
-        './src/scripts/myflix/comics/topbar.js',
-        './src/scripts/myflix/comics/items.js',
-        './src/scripts/myflix/comics/search.js',
-        './src/scripts/myflix/comics/genres.js',
-        './src/scripts/myflix/comics/item.js'
+        './src/scripts/myflix/animations/index.js',
+        './src/scripts/myflix/animations/topbar.js',
+        './src/scripts/myflix/animations/items.js',
+        './src/scripts/myflix/animations/search.js',
+        './src/scripts/myflix/animations/genres.js',
+        './src/scripts/myflix/animations/item.js'
     ],
 
     styles: [
