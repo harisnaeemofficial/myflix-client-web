@@ -18,7 +18,7 @@ myFlix.animations.index = function (req, next) {
     myFlix.animations.setSelectedGenre(req.params.genre);
     myFlix.animations.setBreadcrumb();
     myFlix.animations.setSortItems();
-    $('#input-search').attr('placeholder', 'Search Animations ...').attr('onkeyup', 'myFlix.animations.search.init(this.value);');
+    $('#input-search').val('').attr('placeholder', 'Search Animations ...').attr('onkeyup', 'myFlix.animations.search.init(this.value);');
     $('#close-single-content').attr('onclick', 'myFlix.animations.item.closeSingleContent();');
 
     if (myFlix.animations.genres.currentList.length !== 0) {
